@@ -11,6 +11,9 @@ const app = express();
 
 app.use(express.json());
 
+app.use ('/', (req, res) => {
+    res.json('Hello');
+})
 app.use('/api/books', booksRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api', searchRoutes);
