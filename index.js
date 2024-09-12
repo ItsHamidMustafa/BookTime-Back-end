@@ -15,8 +15,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
     const remoteAddress = req.socket.remoteAddress;
     const ipAddress = url.parse(remoteAddress).hostname;
-    console.log(`Server IP address: ${ipAddress}`);
-    res.json(`Hello`);
+    res.json(`Hello ${ipAddress}`);
 });
 
 app.get("/favicon.ico", (req, res) => {
