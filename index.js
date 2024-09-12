@@ -14,6 +14,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.json('Hello');
 });
+
+app.get("/favicon.ico", (req, res) => {
+    res.json('favicon');
+})
+
 app.use('/api/books', booksRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api', searchRoutes);
