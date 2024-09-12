@@ -28,3 +28,5 @@ mongoose.connect(process.env.MONG_URI).then(() => {
         console.log(`Connected and Listening on port ${process.env.PORT}`);
     });
 });
+
+module.exports = app;
