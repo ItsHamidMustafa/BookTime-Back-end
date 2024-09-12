@@ -6,15 +6,13 @@ const userRoutes = require('./routes/user');
 const searchRoutes = require('./routes/search')
 const recommendationsRoutes = require('./routes/recommendations');
 const uploadRoutes = require('./routes/uploadRoutes');
-const url = require('url')
 
 const app = express();
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    const remoteAddress = req.socket.remoteAddress;
-    const ipAddress = url.parse(remoteAddress).hostname;
+    const ipAddress = req.headers['x-forwarded-for'];
     res.json(`Hello ${ipAddress}`);
 });
 
