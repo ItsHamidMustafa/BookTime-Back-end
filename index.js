@@ -28,7 +28,7 @@ app.use('/api/user', userRoutes);
 app.use('/api', searchRoutes);
 app.use('/api/recommendations', recommendationsRoutes);
 
-app.use("/book-covers", express.static("book-covers"));
+app.use("./book-covers", express.static("book-covers"));
 
 app.use(uploadRoutes);
 
