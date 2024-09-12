@@ -12,8 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    const ipAddress = req.headers['x-forwarded-for'];
-    res.json(`Hello ${ipAddress}`);
+    res.json(`Hello`);
 });
 
 app.get("/favicon.ico", (req, res) => {
