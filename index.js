@@ -16,7 +16,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/favicon.ico", (req, res) => {
-    res.json('favicon');
+    res.json('no favicon');
+})
+
+app.get("/favicon.png", (req, res) => {
+    res.json('no favicon');
 })
 
 app.use('/api/books', booksRoutes);
