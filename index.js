@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.json('Hello');
+    res.json(`Hello ${process.env.VERCEL_URL}`);
 });
 
 app.get("/favicon.ico", (req, res) => {
