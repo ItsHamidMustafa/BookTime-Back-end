@@ -33,10 +33,19 @@ app.use("./book-covers", express.static("book-covers"));
 
 app.use(uploadRoutes);
 
-mongoose.connect(process.env.MONG_URI).then(() => {
+mongoose.connect(process.env.MONG_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    connectTimeoutMS: 10000,
+    socketTimeoutMS: 45000,
+  })
+  .then(() => {
     app.listen(process.env.PORT, () => {
-        console.log(`Connected and Listening on port ${process.env.PORT}`);
+      console.log(`Connected and Listening on port ${process.env.PORT}`);
     });
-});
+  })
+  .catch((err) => {
+    console.error(`Error connecting to MongoDB: ${err}`);
+  });
 
 module.exports = app;
