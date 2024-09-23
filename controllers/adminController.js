@@ -34,7 +34,7 @@ const deleteBook = async (req, res) => {
             fs.unlinkSync(coverPath);
             console.log(`Book cover ${book.cover} deleted successfully`);
         } catch (err) {
-            console.error(`Error deleting book cover: ${error.message}`);
+            console.error(`Error deleting book cover: ${err.message}`);
         }
     } else {
         console.log(`Book cover ${book.cover} don't exist.`);
