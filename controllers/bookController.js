@@ -9,6 +9,10 @@ const findBooksLimited = async(req, res) => {
 const findBooks = async(req, res) => {
     const books = await Book.find().sort({ createdAt: -1 });
 
+    if(!books) {
+        res.status(200).json({ message: 'No books found' });
+    }
+
     res.status(200).json(books);
 }
 

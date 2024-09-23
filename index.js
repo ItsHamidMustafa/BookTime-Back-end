@@ -6,14 +6,8 @@ const userRoutes = require('./routes/user');
 const searchRoutes = require('./routes/search')
 const recommendationsRoutes = require('./routes/recommendations');
 const uploadRoutes = require('./routes/uploadRoutes');
-const cors = require('cors');
 
 const app = express();
-
-app.use(cors ({
-  origin: ['https://book-time-kappa.vercel.app/'],
-  credentials: true,
-}))
 
 app.use(express.json());
 
