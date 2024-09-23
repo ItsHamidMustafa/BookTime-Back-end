@@ -19,7 +19,7 @@ const filerFilter = (req, file, cb) => {
     ) {
         cb(null, true)
     } else {
-        cb(new Error('nsupported file type (Only jpg, jpeg, or png allowed'), false);
+        cb(new Error('Unsupported file type (Only jpg, jpeg, or png allowed'), false);
     }
 };
 
