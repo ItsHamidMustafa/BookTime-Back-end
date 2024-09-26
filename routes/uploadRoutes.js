@@ -8,7 +8,7 @@ const auth = require('../middleware/requireAuth');
 const uploadPDF = require('../middleware/uploadPDF');
 
 
-route.get('/api/:filename', (req, res) => {
+route.get('/:filename', (req, res) => {
     const { filename } = req.params;
 
     const filePath = path.join(__dirname, '../book-covers/', filename);
@@ -31,7 +31,7 @@ route.post("/upload", auth, isAdmin, (req, res) => {
     });
 });
 
-route.get('/api/pdf-files/:filename', (req, res) => {
+route.get('/pdf-files/:filename', (req, res) => {
     const { filename } = req.params;
     const filePath = path.join(__dirname, '../pdf-files/', filename);
 
