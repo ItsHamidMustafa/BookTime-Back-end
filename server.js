@@ -30,7 +30,7 @@ app.use('/api/recommendations', recommendationsRoutes);
 
 app.use("./book-covers", express.static("book-covers"));
 
-app.use('/api', uploadRoutes);
+app.use('/api/uploader', uploadRoutes);
 
 mongoose.connect(process.env.MONG_URI, {
     connectTimeoutMS: 10000,

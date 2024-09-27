@@ -1,5 +1,3 @@
-const User = require('../models/User');
-
 const uploadController = {
     uploadCover: async (req, res) => {
 
@@ -11,7 +9,15 @@ const uploadController = {
         return res.status(200).json({ msg: 'Book Cover uploaded successfully', filename });
     },
     deleteCover: async (req, res) => {
-        console.log('Book Cover')
+        const { filename } = req.params;
+        const filePath = path.join(__dirname, '../book-covers/', filename);
+
+        fs.unlink(filePath, (err) => {
+            if (err) {
+                return res.status(400).json({ msg: 'book-cover not found!' });
+            }
+            return res.status(200).json({ msg: 'book-cover deleted successfully!' });
+        })
     },
     uploadPDF: async (req, res) => {
         const filename = req.file.filename;
