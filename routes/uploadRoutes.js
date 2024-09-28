@@ -20,6 +20,10 @@ route.get('/covers/:filename', (req, res) => {
     });
 });
 
+route.get('/ping', (req, res) => {
+    res.json('Hello there!');
+})
+
 route.post('/cover', auth, isAdmin, (req, res) => {
     uploadImage(req, res, (err) => {
         if (err instanceof multer.MulterError) {
