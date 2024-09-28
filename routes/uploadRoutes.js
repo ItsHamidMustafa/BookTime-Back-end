@@ -20,7 +20,7 @@ route.get('/covers/:filename', (req, res) => {
     });
 });
 
-route.post("/cover", auth, isAdmin, (req, res) => {
+route.post('/cover', auth, isAdmin, (req, res) => {
     uploadImage(req, res, (err) => {
         if (err instanceof multer.MulterError) {
             return res.status(400).json({ msg: err.message + ', only 1MB uploads of jpg, jpeg or png are accepted!' });
