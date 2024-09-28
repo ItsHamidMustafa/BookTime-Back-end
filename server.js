@@ -25,9 +25,9 @@ app.get("/favicon.png", (req, res) => {
 
 app.use('/api/books', booksRoutes);
 app.use('/api/user', userRoutes);
-app.use('/api', searchRoutes);
-app.use('/api/recommendations', recommendationsRoutes);
 app.use('/api/uploader', uploadRoutes);
+app.use('/api/recommendations', recommendationsRoutes);
+app.use('/api', searchRoutes);
 
 app.use("./book-covers", express.static("book-covers"));
 
