@@ -27,7 +27,7 @@ app.use('/api/books', booksRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/uploader', uploadRoutes);
 app.use('/api/recommendations', recommendationsRoutes);
-app.use('/api', searchRoutes);
+app.use('/api/search', searchRoutes);
 
 app.use("./book-covers", express.static("book-covers"));
 

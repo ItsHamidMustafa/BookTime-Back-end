@@ -7,7 +7,6 @@ const isAdmin = require('../middleware/isAdmin');
 const auth = require('../middleware/requireAuth');
 const uploadPDF = require('../middleware/uploadPDF');
 
-
 route.get('/covers/:filename', (req, res) => {
     const { filename } = req.params;
 
